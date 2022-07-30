@@ -1,0 +1,18 @@
+    <th:block th:if="${@loggedUser.id == 0}">
+        <li><a href="/home" class="nav-link">Начало</a></li>
+        <li><a href="/reviews" class="nav-link">Отзиви</a></li>
+        <li><a href="/about" class="nav-link">За мен</a></li>
+        <li><a href="/register" class="nav-link">Регистрация</a></li>
+        <li><a href="#gallery-section" class="nav-link">Галерия</a></li>
+        <li><a href="#contact-section" class="nav-link">Контакти</a></li>
+        <li><a href="/login" class="nav-link">Вход</a></li>
+    </th:block>
+
+    <th:block th:if="${@loggedUser.id > 0}">
+        <li><a href="/home" class="nav-link">Начало</a></li>
+        <li><a href="/reviews" class="nav-link">Отзиви</a></li>
+        <li><a href="/about" class="nav-link">За мен</a></li>
+        <li><a href="#gallery-section" class="nav-link">Галерия</a></li>
+        <li><a href="#contact-section" class="nav-link">Контакти</a></li>
+        <li><a href="/logout" class="nav-link">Изход</a></li>
+    </th:block>

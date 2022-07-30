@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <title>Braids By Rosi<3</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Style -->
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+    
+    
+    <div class="site-navbar-wrap">
+      <div class="site-navbar-top">
+        <div style="background:rgba(0,0,0, .6) !important" class="container-fluid py-3">
+          <div class="row align-items-center">
+            <div class="col-6">
+              <div class="d-flex mr-auto">
+                <a href="#" class="d-flex align-items-center mr-4">
+                  <span class="icon-envelope mr-2"></span>
+                  <span class="d-none d-md-inline-block">braidsbyrosi@abv.bg</span>
+                </a>
+                <a href="#" class="d-flex align-items-center mr-auto">
+                  <span class="icon-phone mr-2"></span>
+                  <span class="d-none d-md-inline-block">+358 897 962 090</span>
+                </a>
+              </div>
+            </div>
+            <div class="col-6 text-right">
+              <div class="mr-auto">
+                <a href="https://www.instagram.com/hairstylebyrosi" class="p-2 pl-0"><span class="icon-instagram"></span></a>
+                <a href="https://www.facebook.com/rositca.nencheva" class="p-2 pl-0"><span class="icon-facebook"></span></a>
+                <a href="#" class="p-2 pl-0"><span class="icon-twitter"></span></a>
+                <a href="#" class="p-2 pl-0"><span class="icon-linkedin"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div style="background:rgba(0,0,0, .6) !important" class="site-navbar site-navbar-target js-sticky-header">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-2">
+              <h1 class="my-0 site-logo"><a href="/home">BByRosi</a></h1>
+              <th:block th:if="${@loggedUser.id > 0}">
+                <span style="color:beige" th:text="'Потребител: ' + ${@loggedUser.firstName} + ' ' + ${@loggedUser.getLastName()}" ></span>
+              </th:block>
+            </div>
+            <div class="col-10">
+              <nav class="site-navigation text-right" role="navigation">
+                <div class="container-fluid">
+                  <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a>
+                  </div>
+                  <ul class="site-menu main-menu js-clone-nav d-none d-lg-block" th:include="fragments/navigation">
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col align-items-center" style="top:83px">
+        <div style="background:rgba(0,0,0, .6) !important"  class="jumbotron text-center">
+          <h1 class="display-4 text-white">Здравейте на всички!</h1>
+          <p class="lead">Аз съм Росица Иванова</p>
+
+          <p>Занимавам се с фризиорство и плетене на плитки</p>
+          <a class="btn btn-primary btn-lg" href="/about" role="button">Научете повече</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="hero" style="background-image: url('/images/background.jpg');">
+
+    </div>
+
+  
+
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.sticky.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

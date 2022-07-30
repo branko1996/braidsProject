@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Registration</title>
+		<meta charset="utf-8">
+
+		<!--CAN BE REMOVED FOR ORIGINAL VIEW-->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/fonts/icomoon/style.css">
+		<link rel="stylesheet" href="/css/style.css">
+
+
+		<!--ORIGINAL DON'T DELETE-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="/fonts2/material-design-iconic-font/css/material-design-iconic-font.min.css">
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="/css2/style.css">
+
+	</head>
+
+	<body>
+
+	<!--CAN BE REMOVED FOR ORIGINAL VIEW-->
+	<div class="site-mobile-menu site-navbar-target">
+		<div class="site-mobile-menu-header">
+			<div class="site-mobile-menu-close mt-3">
+				<span class="icon-close2 js-menu-toggle"></span>
+			</div>
+		</div>
+		<div class="site-mobile-menu-body"></div>
+	</div> <!-- .site-mobile-menu -->
+
+	<!--CAN BE REMOVED FOR ORIGINAL VIEW-->
+	<div class="site-navbar-wrap">
+		<div class="site-navbar-top">
+			<div style="background:rgba(0,0,0, .6) !important" class="container-fluid py-3">
+				<div class="row align-items-center">
+					<div class="col-6">
+						<div class="d-flex mr-auto">
+							<a href="#" class="d-flex align-items-center mr-4">
+								<span class="icon-envelope mr-2"></span>
+								<span class="d-none d-md-inline-block">braidsbyrosi@abv.bg</span>
+							</a>
+							<a href="#" class="d-flex align-items-center mr-auto">
+								<span class="icon-phone mr-2"></span>
+								<span class="d-none d-md-inline-block">+358 897 962 090</span>
+							</a>
+						</div>
+					</div>
+					<div class="col-6 text-right">
+						<div class="mr-auto">
+							<a href="https://www.instagram.com/hairstylebyrosi" class="p-2 pl-0"><span class="icon-instagram"></span></a>
+							<a href="https://www.facebook.com/rositca.nencheva" class="p-2 pl-0"><span class="icon-facebook"></span></a>
+							<a href="#" class="p-2 pl-0"><span class="icon-twitter"></span></a>
+							<a href="#" class="p-2 pl-0"><span class="icon-linkedin"></span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="site-navbar site-navbar-target js-sticky-header">
+			<div class="container-fluid">
+				<div style="background:rgba(0,0,0, .6) !important" class="row align-items-center">
+					<div class="col-2">
+						<h1 class="my-0 site-logo"><a href="/home">BByRosi</a></h1>
+					</div>
+					<div class="col-10">
+						<nav class="site-navigation text-right" role="navigation">
+							<div class="container-fluid">
+								<div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a>
+								</div>
+								<ul class="site-menu main-menu js-clone-nav d-none d-lg-block" th:include="fragments/navigation">
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+		<!--Inner picture background is in css2/style.css/style.css on row 54-->
+		<div class="wrapper" style="background-image: url('/images/registration-picture-2.jpg');">
+			<div  class="inner">
+				<form action=""
+				th:method="POST"
+				th:action="@{/register}"
+				th:object="${registrationDTO}">
+					<h3>Registration Form</h3>
+					<div  class="form-group">
+						<div class="form-wrapper">
+							<label for="firstName">First Name</label>
+							<input type="text"
+								   class="form-control"
+								   id="firstName"
+								   name="firstName"
+								   th:field="*{firstName}"
+								   th:errorclass="is-invalid"/>
+							<small class="invalid-feedback text-danger">
+								Size must be between 3 and 20 characters.
+							</small>
+						</div>
+						<div class="form-wrapper">
+							<label for="lastName">Last Name</label>
+							<input type="text"
+								   class="form-control"
+								   id="lastName"
+								   name="lastName"
+								   th:field="*{lastName}"
+								   th:errorclass="is-invalid"/>
+							<small class="invalid-feedback text-danger">
+								Size must be between 3 and 20 characters.
+							</small>
+						</div>
+					</div>
+					<div class="form-wrapper">
+						<label for="email">Email</label>
+						<input type="text"
+							   class="form-control"
+							   id="email"
+							   name="email"
+							   th:field="*{email}"
+							   th:errorclass="is-invalid"/>
+						<small class="invalid-feedback text-danger" >
+							Invalid email.
+						</small>
+					</div>
+					<div class="form-wrapper">
+						<label for="password">Password</label>
+						<input type="password"
+							   class="form-control"
+							   id="password"
+							   name="password"
+							   th:field="*{password}"
+							   th:errorclass="is-invalid"/>
+						<small class="invalid-feedback text-danger">
+							Password length must be between 3 and 20.
+						</small>
+					</div>
+					<div class="form-wrapper">
+						<label for="confirmPassword">Confirm Password</label>
+						<input type="password"
+							   class="form-control"
+							   id="confirmPassword"
+							   name="confirmPassword"
+							   th:field="*{confirmPassword}"
+							   th:errorclass="is-invalid"/>
+						<small class="invalid-feedback text-danger">
+							Password length must be between 3 and 20.
+						</small>
+					</div>
+<!--					<div class="checkbox">-->
+<!--						<label>-->
+<!--							<input type="checkbox"> I accept the Terms of Use & Privacy Policy.-->
+<!--							<span class="checkmark"></span>-->
+<!--						</label>-->
+<!--					</div>-->
+
+					<div class="button-holder d-flex justify-content-center">
+						<button type="submit" value="Register">Register</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+
+	<!--CAN BE REMOVED FOR ORIGINAL VIEW-->
+	<script src="/js/registerUserJS.js"></script>
+	<script src="/js/jquery-3.3.1.min.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/jquery.sticky.js"></script>
+	<script src="/js/main.js"></script>
+	</body>
+</html>
